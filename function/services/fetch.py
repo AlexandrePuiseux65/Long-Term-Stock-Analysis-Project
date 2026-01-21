@@ -89,7 +89,6 @@ class FetchDataStocks:
     def get_dividends(self):
         return self.stock.dividends
 
-    # to test
     def get_annual_dividend(self):
         divs = self.get_dividends()
         if divs.empty:
@@ -120,3 +119,10 @@ class FetchDataStocks:
             if key in df.index:
                 return df.loc[key]
         return None
+
+    '''
+    > Get Stock news
+    '''
+    # to test
+    def get_news(self):
+        return self.stock.news
