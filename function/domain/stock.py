@@ -15,7 +15,8 @@ class Stock:
         balance_sheet,
         dividends,
         dividents_all,
-        shares_outstanding
+        shares_outstanding,
+        news
     ):
         self.ticker = ticker
 
@@ -33,6 +34,9 @@ class Stock:
         self.dividends = dividends
         self.dividents_all= dividents_all
         self.shares_outstanding = shares_outstanding
+
+        # News
+        self.news = news
 
     def __repr__(self):
         return f"Stock(ticker={self.ticker}, price={self.current_price}, cap={self.market_cap})"

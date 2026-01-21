@@ -15,5 +15,6 @@ def load_stock(ticker: str):
         dividends=fetch.get_dividends(),
         dividents_all= fetch.get_annual_dividend(),
         shares_outstanding=fetch.get_shares_outstanding(),
+        news=fetch.get_news()
     )
 

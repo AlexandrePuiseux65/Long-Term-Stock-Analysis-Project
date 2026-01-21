@@ -7,6 +7,7 @@ from visual.price_chart import plot_stock_history
 from visual.metric_table import display_key_metrics
 from visual.score import display_score_gauge
 from visual.info_table import display_info_table
+from visual.news_section import display_news
 
 def show_analysis_page():
     st.title("📊 Stock Analysis")
@@ -26,6 +27,11 @@ def show_analysis_page():
                             st.plotly_chart(fig, use_container_width=True)
                         except Exception as e:
                             st.error(f"Chart Error: {e}")
+                        
+                        try:
+                            display_news(data.news)
+                        except Exception as e:
+                            st.error(f"News Error: {e}")
 
                         try:
                             display_key_metrics(data)
