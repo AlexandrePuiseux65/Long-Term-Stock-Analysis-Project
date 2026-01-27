@@ -9,6 +9,8 @@ from visual.score import display_score_gauge
 from visual.info_table import display_info_table
 from visual.news_section import display_news
 
+import pandas as pd
+
 def show_analysis_page():
     st.title("📊 Stock Analysis")
 
@@ -21,7 +23,6 @@ def show_analysis_page():
                     data = load_stock(ticker)
                     print(f"DEBUG: Checking data for {data.current_price}")
                     if data is not None:
-                        # --- Charts & Metrics ---
                         try:
                             fig = plot_stock_history(data)
                             st.plotly_chart(fig, use_container_width=True)
