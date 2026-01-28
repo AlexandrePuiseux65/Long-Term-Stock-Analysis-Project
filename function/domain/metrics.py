@@ -46,3 +46,15 @@ def get_ebitda(stock: Stock, year: int):
         if key in df.index:
             return _get_value_by_year(df.loc[key], year)
     return None
+
+def get_ebit(stock: Stock, year: int):
+    pass
+
+def get_capex(stock: Stock, year: int):
+    pass
+
+def get_cash_and_equiv(stock: Stock, year: int):
+    pass
+
+def get_interest_expense(stock: Stock, year: int):
+    pass

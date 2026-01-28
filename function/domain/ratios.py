@@ -132,3 +132,30 @@ def price_to_book(stock: Stock, year: int):
     price_avg = prices_year["Close"].mean()
 
     return price_avg / book_value_per_share
+
+def operating_margin(stock: Stock, year: int):
+    pass
+
+def dividend_yield(stock: Stock, year: int):
+    pass
+
+def free_cash_flow(stock: Stock, year: int):
+    pass
+
+def net_debt(stock: Stock, year: int):
+    pass
+
+def payout_on_fcf(stock: Stock, year: int):
+    pass
+
+def retention_ratio(stock: Stock, year: int):
+    pass
+
+def interest_coverage_ratio(stock: Stock, year: int):
+    pass
+
+def dividend_growth_rate(stock: Stock, year: int):
+    pass
+
+def expected_total_return(stock: Stock, year: int):
+    pass
