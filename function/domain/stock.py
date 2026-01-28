@@ -1,7 +1,6 @@
 class Stock:
     """
     Domain object holding raw financial and market data.
-    No calculations, no extraction logic.
     """
 
     def __init__(
