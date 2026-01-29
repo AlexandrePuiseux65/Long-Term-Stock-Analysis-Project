@@ -1,5 +1,5 @@
 from function.domain.stock import Stock
-from function.domain.metrics import (
+from .metrics import (
     compute_bna,
     get_net_income,
     get_revenue,

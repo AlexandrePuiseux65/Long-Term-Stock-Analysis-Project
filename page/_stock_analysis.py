@@ -4,7 +4,7 @@ from function.services.fetch import is_valid_cac40_ticker
 from function.domain.scoring import calculate_global_score
 
 from visual.price_chart import plot_stock_history
-from visual.metric_table import display_key_metrics
+from visual.metric_table import display_key_ratios
 from visual.score import display_score_gauge
 from visual.info_table import display_info_table
 from visual.news_section import display_news
@@ -30,9 +30,9 @@ def show_analysis_page():
                             st.error(f"Chart Error: {e}")
 
                         try:
-                            display_key_metrics(data)
+                            display_key_ratios(data)
                         except Exception as e:
-                            st.error(f"Metrics Table Error: {e}")
+                            st.error(f"Ratios Table Error: {e}")
                             
                 except Exception as e:
                     st.error(f"An error occurred while loading data: {e}")
