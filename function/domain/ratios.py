@@ -1,5 +1,5 @@
 from function.domain.stock import Stock
-from .metrics import (
+from function.domain.metrics import (
     compute_bna,
     get_net_income,
     get_revenue,
@@ -7,9 +7,9 @@ from .metrics import (
     get_operating_cashflow,
     get_capex,
     get_cash_and_equiv,
-    get_interest_expense
+    get_interest_expense,
+    get_ebitda
 )
-import pandas as pd
 
 def get_average_price(stock: Stock, year: int):
     """calculates the mean closing price for a specific year"""
@@ -106,8 +106,6 @@ def leverage(stock: Stock, year: int):
 
     debt = debt_df.loc["Total Debt"]
     debt_year = debt[debt.index.year == year]
-
-    from domain.metrics import get_ebitda
     ebitda = get_ebitda(stock, year)
 
     if debt_year.empty or ebitda is None or ebitda == 0:

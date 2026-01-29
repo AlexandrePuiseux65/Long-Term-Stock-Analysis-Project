@@ -33,5 +33,4 @@ def plot_stock_history(stock):
 
     fig.update_yaxes(title_text="Price (€)", secondary_y=False)
     fig.update_yaxes(title_text="Dividend Amount (€)", secondary_y=True)
-
     return fig

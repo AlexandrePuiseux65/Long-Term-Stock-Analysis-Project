@@ -6,13 +6,18 @@ from function.domain.ratios import (
     retention_ratio, interest_coverage_ratio, dividend_growth_rate,
     expected_total_return
 )
+from function.domain.metrics import (
+    get_revenue, get_operating_cashflow, get_capex, 
+    get_cash_and_equiv, get_ebit, get_ebitda, get_interest_expense, 
+    get_net_income, compute_bna, compute_cf_per_share
+)
 from datetime import datetime
 import pandas as pd
 
 def display_key_ratios(stock):
     """Allow us to display the key ratios"""
     last_year = datetime.now().year - 1
-    years = [last_year - i for i in range(5)]
+    years = [last_year - i for i in range(4)]
     data = {}
     
     for y in years:
@@ -37,7 +42,7 @@ def display_key_ratios(stock):
                 expected_total_return(stock, y)
         ]
     #dummy data - futur upgrade
-    data["Industry AVG"] = ["-", 15, "15%", "5%", "10%", "60%", 2, 2.5, 2, "15%", "4%", "-", "-", "70%", "40%", 3, "5%", "9%"]
+    #data["Industry AVG"] = ["-", 15, "15%", "5%", "10%", "60%", 2, 2.5, 2, "15%", "4%", "-", "-", "70%", "40%", 3, "5%", "9%"]
     data["Priority"] = [3, 3, 4, 2, 4, 5, 3, 5, 1, 2, 3, 4, 4, 5, 2, 5, 5, 3]
 
     df_ratio = pd.DataFrame(data, index=[
@@ -49,5 +54,42 @@ def display_key_ratios(stock):
 
     # Dummy data
     df_ratio["Status"] = "✅"
-    print(df_ratio)
-    return df_ratio
+    st.header("Ratio :")
+    st.table(df_ratio)
+
+def display_key_metrics(stock):
+    """Allow us to display the key metrics"""
+    last_year = datetime.now().year - 1
+    years = [last_year - i for i in range(4)]
+    data = {}
+    
+    for y in years:
+            data[str(y)] = [
+                get_revenue(stock, y),
+                get_net_income(stock, y),
+                compute_bna(stock, y),
+                get_operating_cashflow(stock, y),
+                compute_cf_per_share(stock, y),
+                get_ebitda(stock, y),
+                get_ebit(stock, y),
+                get_capex(stock, y),
+                get_cash_and_equiv(stock, y),
+                get_interest_expense(stock, y)
+            ]
+    
+    #Dummy data
+    data["Priority"] = [3, 3, 4, 2, 4, 5, 3, 5, 5, 5]
+
+    metrics_index = [
+        "Revenue", "Net Income", "EPS (BNA)",
+        "Operating Cash Flow", "CF per Share", "EBITDA", "EBIT",
+        "CAPEX", "Cash & Equiv.", "Interest Expense"
+    ]
+
+    df_metrics = pd.DataFrame(data, index=metrics_index)
+
+    # Dummy data
+    df_metrics["Status"] = "✅"
+    st.header("Metrics :")
+    st.table(df_metrics)
+    
