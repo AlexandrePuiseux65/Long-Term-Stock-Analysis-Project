@@ -5,8 +5,8 @@ import yfinance as yf
 This fonction test that the ticker we trying to use if correct for Paris market.
 It also print the name of the stock in the terminal.
 '''
-def is_valid_cac40_ticker(ticker):
-    df = pd.read_csv('data/cac40.csv')
+def is_valid_ticker(ticker):
+    df = pd.read_csv('data/ticker_list.csv')
     if ticker in df["symbol_paris"].values:
         return True
     else: 
@@ -18,7 +18,7 @@ No financial calculations here.
 '''
 class FetchDataStocks:
     def __init__(self, ticker) -> None:
-        if not is_valid_cac40_ticker(ticker):
+        if not is_valid_ticker(ticker):
             raise ValueError(f"ERREUR: {ticker} not a valid CAC40 ticker")
 
         self.ticker = ticker
