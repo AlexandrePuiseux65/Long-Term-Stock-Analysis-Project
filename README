@@ -1,1 +1,13 @@
 streamlit run app.py
+
+# Long-Term Stock Analysis Project
+
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://your-app-name.streamlit.app)
+
+A professional financial analysis tool built with **Python** and **Streamlit** to evaluate stock market opportunities through fundamental analysis.
+
+## Live Demo
+The application is deployed and accessible at: **[https://your-app-name.streamlit.app](https://your-app-name.streamlit.app)**
+
+## Overview
+... (la suite du texte précédent)
