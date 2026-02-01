@@ -1,13 +1,81 @@
-streamlit run app.py
-
 # Long-Term Stock Analysis Project
+## 1. Introduction
+### <u>A - Project vision</u>
+The Long-Term Stock Analysis Project is a personal tool developed to automate fundamental investment research and remove emotional bias from the decision-making process. 
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://your-app-name.streamlit.app)
+Deeply inspired by Raphaël Carteni’s book, "La Magie des Dividendes", the application implements a strict Dividend Growth Investing (DGI) methodology by analyzing balance sheet safety, payout sustainability, and historical growth trends. 
 
-A professional financial analysis tool built with **Python** and **Streamlit** to evaluate stock market opportunities through fundamental analysis.
+By centralizing key financial metrics and automated scoring into a single dashboard, this project aims to efficiently identify high-quality companies capable of delivering sustainable compound interest over the long term.
 
-## Live Demo
-The application is deployed and accessible at: **[https://your-app-name.streamlit.app](https://your-app-name.streamlit.app)**
 
-## Overview
-... (la suite du texte précédent)
+### <u>B - Strategy Focus (DGI)</u>
+This project is specifically tailored for the **DGI strategy**. It doesn't just look at current prices; it analyzes the sustainability and growth potential of dividends by examining:
+* **Profitability & Safety**: Evaluation of ROE, ROA, and Interest Coverage.
+* **Dividend Sustainability**: Deep dive into Payout Ratios (Earnings and FCF based).
+* **Historical Trends**: 5-year analysis of Revenue, Net Income, and Cash Flow.
+
+
+---
+## 2. Live Demo
+The application is deployed and accessible at: **[https://v1.com](https://your-app-name.streamlit.app)**
+
+---
+## 3. Work on the project 
+In order to launch the projet in local, effectuate the following commands: 
+
+````shell
+pip install -r requirements.txt
+streamlit run app.py
+````
+---
+## 4. Project Architecture
+
+```text
+.
+├── config/
+│   └── settings.py           # Application configurations
+├── data/
+│   └── cac40.csv             # Data with stock list
+├── function/
+│   ├── domain/               # Business logic & Financial formulas
+│   │   ├── metrics.py        # Raw data processing (Revenue, Net Income)
+│   │   ├── ratios.py         # Financial ratio calculations (PER, ROE)
+│   │   └── stock.py          # Stock object logic
+│   └── services/             # External communications
+│       ├── fetch.py          # Data retrieval logic
+│       └── finance.py        # Financial API wrappers
+├── page/                     # Streamlit view layouts
+│   ├── _explaination.py      # Methodology documentation page
+│   ├── _stock_analysis.py    # Main analysis dashboard
+│   └── _stock_info.py        # General company information
+├── visual/                   # Reusable UI components
+│   ├── info_table.py         # Company info display
+│   ├── metric_table.py       # Financial tables (Ratios & Metrics)
+│   ├── news_section.py       # Market news integration
+│   └── price_chart.py        # Interactive stock charts
+├── app.py                    # Main entry point (Streamlit)
+├── License                   # MIT License file
+├── README.md                 # Project documentation
+└── requirements.txt          # Python dependencies
+```
+---
+## 5. Key Features
+
+---
+## 6. Dependencies
+
+
+---
+## 7. Versioning
+
+| Version | Date | Status
+| :--- | :--- | :--- |
+| **v1.0** | February 2026 | <code style="color : green">Active</code>
+
+> *Note: This project is under active development. Upcoming features are subject to change based on personal research priorities.*
+
+---
+## License
+This project is licensed under the following [LICENSE](LICENSE).
+
+
