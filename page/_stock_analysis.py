@@ -1,6 +1,6 @@
 import streamlit as st
 from function.services.finance import load_stock
-from function.services.fetch import is_valid_cac40_ticker
+from function.services.fetch import is_valid_ticker
 
 from visual.price_chart import plot_stock_history
 from visual.metric_table import display_key_ratios, display_key_metrics
@@ -13,7 +13,7 @@ def show_analysis_page():
     ticker = st.text_input("Enter the stock ticker :").upper()
 
     if ticker:
-        if is_valid_cac40_ticker(ticker):
+        if is_valid_ticker(ticker):
             with st.spinner(f"Analyzing {ticker}..."):
                 try:
                     data = load_stock(ticker)
