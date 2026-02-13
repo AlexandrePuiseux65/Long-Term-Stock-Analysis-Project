@@ -54,7 +54,7 @@ def display_key_ratios(stock):
 
     # Dummy data
     df_ratio["Status"] = "✅"
-    st.header("Ratio :")
+    st.header("Ratio:")
     st.table(df_ratio)
 
 def display_key_metrics(stock):
@@ -90,6 +90,6 @@ def display_key_metrics(stock):
 
     # Dummy data
     df_metrics["Status"] = "✅"
-    st.header("Metrics :")
+    st.header("Metrics:")
     st.table(df_metrics)
     
